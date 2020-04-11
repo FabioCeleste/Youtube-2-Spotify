@@ -1,0 +1,22 @@
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#centro {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align:center;
+
+  /* pura mágica */
+  position: absolute;
+  top: 50%; /* posiciona na metade da tela */
+  margin-top: -25px; /* e retrocede metade da altura */
+}
+
+a{
+  text-decoration: none;
+  font-size: 35px;;
+}
