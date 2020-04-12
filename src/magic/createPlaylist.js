@@ -16,7 +16,7 @@ async function criaPlayList(playlistName, spotifyToken, userId) {
     const { id } = response.data;
     array.push(id);
   }).catch((error) => {
-    console.log(error);
+    console.log('aqui');
   });
   return array;
 }

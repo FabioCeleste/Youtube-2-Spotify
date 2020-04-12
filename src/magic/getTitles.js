@@ -8,7 +8,7 @@ const getToken = require('./getToken');
 
 const name = String(Math.floor(Math.random() * (999999999 - 111111111) + 111111111));
 
-const processTitle = [];
+
 async function getTitles(playlistId) {
   const titles = [];
   await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&fields=items%2Fsnippet(title)&key=${process.env.GOOGLE_KEY}`).then((response) => {
@@ -23,6 +23,7 @@ async function getTitles(playlistId) {
 
 
 async function test(youtubeId, spotifyLogin) {
+  const processTitle = [];
   const completeTrackId = [];
   const linkOfPlay = [];
   const titles = await getTitles(youtubeId);
@@ -46,15 +47,21 @@ async function test(youtubeId, spotifyLogin) {
     const finalTitle = a.split(' ').join('-');
     processTitle.push(finalTitle);
   });
+
   const result = await search.search(processTitle, spotifyToken);
-  const tracksId = result[0];
+  let tracksId = result[0];
   const notFound = result[1];
 
   tracksId.map((id) => {
     completeTrackId.push(`spotify:track:${id}`);
   });
   id = id[0];
+
+
   addSongs.addSongs(completeTrackId, spotifyToken, id);
+  tracksId = [];
+
+
   linkOfPlay.push(`https://open.spotify.com/playlist/${id}`);
   return [linkOfPlay[0], [...notFound]];
 }
