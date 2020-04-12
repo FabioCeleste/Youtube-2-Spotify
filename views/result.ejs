@@ -1,0 +1,36 @@
+<%- include('includes/head')  %>
+<link rel="stylesheet" type="text/css" href="/css/result.css">
+  <title>Document</title>
+
+</head>
+
+
+
+<body>
+
+
+  <div class="main">
+    <%- urlss %>
+
+    <div class="notfound">
+      <p class="not">Não consegui adicionar as seguintes musicas</p>
+      <% for (let i of notFound) { %>
+       <p class="music"> <%= i %>   </p>
+      <% } %>
+
+    </div>
+
+
+    <form action="/" method="GET">
+      <button>Converter nova Playlist</button>
+
+    </form>
+  </div>
+
+
+
+
+  <script src="ejs.js"></script>
+</body>
+
+</html>

@@ -15,8 +15,9 @@ class Home {
 
       const spotifyCode = req.body.spotifycode;
       const links = await magic.magic(youtubeId, spotifyCode);
+      console.log(links[1]);
       const link = links[0];
-      res.render('result', { urlss: `<a href="${link}"> Acesse sua playlist </a>`, notFound: links[1] });
+      res.render('result', { urlss: `<a href="${link}"> Click aqui para acessar sua playlist </a>`, notFound: links[1] });
     } catch (e) {
       res.send(`${e}`);
     }

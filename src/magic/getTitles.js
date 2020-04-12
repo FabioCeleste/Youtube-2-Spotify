@@ -41,14 +41,12 @@ async function test(youtubeId, spotifyLogin) {
       .replace(/\(([^)]+)\)/g, '')
       .replace(/Soundtrack/ig, '')
       .replace(/HD/ig, '')
-      .replace(/[]/ig, '')
       .replace(/Amazon/ig, '')
       .replace(/[^\w\s]/gi, '');
     const finalTitle = a.split(' ').join('-');
     processTitle.push(finalTitle);
   });
   const result = await search.search(processTitle, spotifyToken);
-  console.log(processTitle);
   const tracksId = result[0];
   const notFound = result[1];
 

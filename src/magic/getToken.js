@@ -18,7 +18,7 @@ const getToken = async (code) => {
   }).then((token) => {
     const obj = token.data;
     idarray.push(obj.access_token);
-  }).catch((e) => console.log(e));
+  }).catch((e) => console.log('aquixd'));
   return idarray[0];
 };
 

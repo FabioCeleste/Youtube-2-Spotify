@@ -16,7 +16,7 @@ class App {
   middlewares() {
     this.app.use(_express2.default.urlencoded({ extended: true }));
     this.app.use(_express2.default.json());
-    this.app.set('views', _path2.default.resolve(__dirname, 'views'));
+    this.app.set('views', _path2.default.resolve(__dirname, '..', 'views'));
     this.app.set('view engine', 'ejs');
     this.app.use(_cookieparser2.default.call(void 0, ));
     this.app.use(_express2.default.static(_path2.default.resolve(__dirname, '..', 'public')));
