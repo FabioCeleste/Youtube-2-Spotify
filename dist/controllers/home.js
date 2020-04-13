@@ -10,20 +10,15 @@ class Home {
 
   async result(req, res) {
     try {
-      let youtubeFullUrl = req.body.urlyoutube;
-      let youtubeId = getYouid.getYouId(youtubeFullUrl);
-      let spotifyCode = req.body.spotifycode;
+      const youtubeFullUrl = req.body.urlyoutube;
+      const youtubeId = getYouid.getYouId(youtubeFullUrl);
+      const spotifyCode = req.body.spotifycode;
 
       const links = await magic.magic(youtubeId, spotifyCode);
 
-      youtubeFullUrl = '';
-      youtubeId = '';
-      spotifyCode = '';
-
-
       console.log(links[1]);
       const link = links[0];
-      res.render('result', { urlss: `<a href="${link}"> Click aqui para acessar sua playlist </a>`, notFound: links[1] });
+      res.render('result', { urlss: `<a target="_blank" href="${link}"> Click aqui para acessar sua playlist </a>`, notFound: links[1] });
     } catch (e) {
       res.send(`${e}`);
     }

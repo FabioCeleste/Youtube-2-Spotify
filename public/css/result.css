@@ -36,6 +36,8 @@ form{
 }
 
 button {
+      height: 35px;
+      margin-top: 120px;
       border: none;
       border-radius: 8px;
       color: white;

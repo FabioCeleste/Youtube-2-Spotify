@@ -49,7 +49,7 @@ async function test(youtubeId, spotifyLogin) {
   });
 
   const result = await search.search(processTitle, spotifyToken);
-  let tracksId = result[0];
+  const tracksId = result[0];
   const notFound = result[1];
 
   tracksId.map((id) => {
@@ -59,8 +59,6 @@ async function test(youtubeId, spotifyLogin) {
 
 
   addSongs.addSongs(completeTrackId, spotifyToken, id);
-  tracksId = [];
-
 
   linkOfPlay.push(`https://open.spotify.com/playlist/${id}`);
   return [linkOfPlay[0], [...notFound]];

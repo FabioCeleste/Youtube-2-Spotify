@@ -13,17 +13,20 @@
     <%- urlss %>
 
     <div class="notfound">
+
+
+      <% if (notFound.length > 0) { %>
       <p class="not">Não consegui adicionar as seguintes musicas</p>
       <% for (let i of notFound) { %>
        <p class="music"> <%= i %>   </p>
       <% } %>
+      <%}%>
 
     </div>
 
 
     <form action="/" method="GET">
       <button>Converter nova Playlist</button>
-
     </form>
   </div>
 
