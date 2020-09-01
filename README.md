@@ -18,12 +18,12 @@
 
 <h3>
   Backend  
-<h3 />
+</h3>
  <p>-Express<p/>
  <p>-Youtube Data API<p/>
  <p>-Spotify API<p/>
 <h3>
   Frontend  
-<h3 />
+</h3>
  <p>-EJS<p/>
  <p>-CSS<p/>
